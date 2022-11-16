@@ -12,6 +12,8 @@ function startOfGame() {
     buttonToStart.textContent = "START";
     buttonToStart.addEventListener('click', firstGameScene);
 
+    const buttons = document.querySelector(".buttoncontent");
+    buttons.style.display = "none";
 }
 
 function yourName() {
@@ -24,6 +26,12 @@ function yourName() {
  * Function that draws the first scene of the game
  */
 function firstGameScene() {
+    const gameStartScene = document.querySelector(".startscenecontent");
+    gameStartScene.style.display = "none";
+
+    const buttons = document.querySelector(".buttoncontent");
+    buttons.style.display = "block";
+
     const storyText = document.getElementById("gametext");
     storyText.textContent = "Något om prinsessa";
 
@@ -35,11 +43,36 @@ function firstGameScene() {
     secondButton.textContent = "Go to the town";
     secondButton.addEventListener('click', startFirstTownScene);
 
+    const img = document.querySelector("img");
+    img.src = "./images/spegel.png";
 
-    // VARFÖ DUNKAR DET INTE
-    // const image = document.createElement("img")
-    // image.src = "./images/spegel.png";
-    // const src =document.getElementById("gamecontent");
-    // src.appendChild(image)
+}
 
+function startFirstBeachScene() {
+    const storyText = document.getElementById("gametext");
+    storyText.textContent = "Prinsessan är på stranden";
+
+    const firstButton = document.getElementById("firstoption");
+    firstButton.textContent = "Välj spaden";
+    firstButton.addEventListener('click', putiteminbag);
+
+    const secondButton = document.getElementById("secondoption");
+    secondButton.textContent = "Välj cyklopet";
+    secondButton.addEventListener('click', putiteminbage);
+
+    const img = document.querySelector("img");
+    img.src = "./images/stranden.png";
+}
+
+function startFirstTownScene() {
+    const storyText = document.getElementById("gametext");
+    storyText.textContent = "Prinsessan är påväg in till staden";
+
+    const firstButton = document.getElementById("firstoption");
+    firstButton.textContent = "Ta upp myntet";
+    firstButton.addEventListener('click', startTownSceneCoin);
+
+    const secondButton = document.getElementById("secondoption");
+    secondButton.textContent = "ta inte upp myntet";
+    secondButton.addEventListener('click', startTownSceneBoy);
 }

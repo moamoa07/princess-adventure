@@ -4,6 +4,8 @@ function main() {
     startOfGame();
 }
 
+let inputName;
+
 function startOfGame() {
     const startText = document.getElementById("starttextcontent");
     startText.textContent = "Welcome to the game a Princess Adventure! I'm happy that you want to play and I hope you will like it. To begin enter your name and then press start."
@@ -12,13 +14,17 @@ function startOfGame() {
     buttonToStart.textContent = "START";
     buttonToStart.addEventListener('click', firstGameScene);
 
+    const buttonToSave = document.getElementById("savebutton");
+    buttonToSave.textContent = "Save";
+    buttonToSave.addEventListener('click', yourName);
+
     const buttons = document.querySelector(".buttoncontent");
     buttons.style.display = "none";
 }
 
 function yourName() {
     let inputName = document.getElementById("playername").value;
-    console.log(inputName)
+    alert(inputName);
 }
 
 
@@ -33,7 +39,9 @@ function firstGameScene() {
     buttons.style.display = "block";
 
     const storyText = document.getElementById("gametext");
-    storyText.textContent = "Något om prinsessa";
+    storyText.textContent = "Welcome princess today you will go on an adventure.";
+    // storyText.textContent = "Welcome princess" + inputName + "today you will go on an adventure.";
+
 
     const firstButton = document.getElementById("firstoption");
     firstButton.textContent = "Go to the beach";

@@ -1,10 +1,26 @@
 window.addEventListener("DOMContentLoaded", main);
 
-function main() {
-    startOfGame();
-}
+/** @type {HTMLParagraphElement} A p-tag that includes the storytext in every scene */
+let startText;
+/** @type {HTMLButtonElement} Option 1 in every scene */
+let firstButton;
+/** @type {HTMLButtonElement} Option 2 in every scene */
+let secondButton;
 
 let playerName;
+let hasSnorkelBeenChoosen = false;
+let hasSpadeBeenChoosen = false;
+
+function main() {
+    startOfGame();
+    getHTMLElements();
+}
+
+function getHTMLElements() {
+    storyText = document.getElementById("gametext");
+    firstButton = document.getElementById("firstoption");
+    secondButton = document.getElementById("secondoption");
+}
 
 function startOfGame() {
     const startText = document.getElementById("starttextcontent");
@@ -12,7 +28,7 @@ function startOfGame() {
 
     const buttonToStart = document.getElementById("startbutton");
     buttonToStart.textContent = "START";
-    buttonToStart.addEventListener('click', firstGameScene);
+    buttonToStart.addEventListener('click', startFirstGameScene);
 
     const buttonToSave = document.getElementById("savebutton");
     buttonToSave.textContent = "Save";
@@ -31,23 +47,19 @@ function savePlayerName() {
 /**
  * Function that draws the first scene of the game
  */
-function firstGameScene() {
+function startFirstGameScene() {
     const gameStartScene = document.querySelector(".startscenecontent");
     gameStartScene.style.display = "none";
 
     const buttons = document.querySelector(".buttoncontent");
     buttons.style.display = "block";
 
-    const storyText = document.getElementById("gametext");
     storyText.textContent = "Welcome princess today you will go on an adventure.";
     storyText.textContent = "Welcome princess " + playerName + " today you will go on an adventure.";
 
-
-    const firstButton = document.getElementById("firstoption");
     firstButton.textContent = "Go to the beach";
     firstButton.addEventListener('click', startFirstBeachScene);
 
-    const secondButton = document.getElementById("secondoption");
     secondButton.textContent = "Go to the town";
     secondButton.addEventListener('click', startFirstTownScene);
 
@@ -57,14 +69,11 @@ function firstGameScene() {
 }
 
 function startFirstBeachScene() {
-    const storyText = document.getElementById("gametext");
     storyText.textContent = "Prinsessan är på stranden";
-    
-    const firstButton = document.getElementById("firstoption");
+
     firstButton.textContent = "Välj spaden";
     firstButton.addEventListener('click', putItemInBag);
-    
-    const secondButton = document.getElementById("secondoption");
+
     console.log(secondButton);
     secondButton.textContent = "Välj cyklopet";
     secondButton.addEventListener('click', putItemInBag);
@@ -74,14 +83,11 @@ function startFirstBeachScene() {
 }
 
 function startFirstTownScene() {
-    const storyText = document.getElementById("gametext");
     storyText.textContent = "Prinsessan är påväg in till staden";
 
-    const firstButton = document.getElementById("firstoption");
     firstButton.textContent = "Ta upp myntet";
     firstButton.addEventListener('click', startTownSceneCoin);
 
-    const secondButton = document.getElementById("secondoption");
     secondButton.textContent = "ta inte upp myntet";
     secondButton.addEventListener('click', startTownSceneBoy);
 }

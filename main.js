@@ -4,7 +4,7 @@ function main() {
     startOfGame();
 }
 
-let inputName;
+let playerName;
 
 function startOfGame() {
     const startText = document.getElementById("starttextcontent");
@@ -16,15 +16,15 @@ function startOfGame() {
 
     const buttonToSave = document.getElementById("savebutton");
     buttonToSave.textContent = "Save";
-    buttonToSave.addEventListener('click', yourName);
+    buttonToSave.addEventListener('click', savePlayerName);
 
     const buttons = document.querySelector(".buttoncontent");
     buttons.style.display = "none";
 }
 
-function yourName() {
+function savePlayerName() {
     let inputName = document.getElementById("playername").value;
-    alert(inputName);
+    playerName = inputName;
 }
 
 
@@ -40,7 +40,7 @@ function firstGameScene() {
 
     const storyText = document.getElementById("gametext");
     storyText.textContent = "Welcome princess today you will go on an adventure.";
-    // storyText.textContent = "Welcome princess" + inputName + "today you will go on an adventure.";
+    storyText.textContent = "Welcome princess " + playerName + " today you will go on an adventure.";
 
 
     const firstButton = document.getElementById("firstoption");
@@ -59,14 +59,15 @@ function firstGameScene() {
 function startFirstBeachScene() {
     const storyText = document.getElementById("gametext");
     storyText.textContent = "Prinsessan är på stranden";
-
+    
     const firstButton = document.getElementById("firstoption");
     firstButton.textContent = "Välj spaden";
-    firstButton.addEventListener('click', putiteminbag);
-
+    firstButton.addEventListener('click', putItemInBag);
+    
     const secondButton = document.getElementById("secondoption");
+    console.log(secondButton);
     secondButton.textContent = "Välj cyklopet";
-    secondButton.addEventListener('click', putiteminbage);
+    secondButton.addEventListener('click', putItemInBag);
 
     const img = document.querySelector("img");
     img.src = "./images/stranden.png";
@@ -83,4 +84,9 @@ function startFirstTownScene() {
     const secondButton = document.getElementById("secondoption");
     secondButton.textContent = "ta inte upp myntet";
     secondButton.addEventListener('click', startTownSceneBoy);
+}
+
+
+function putItemInBag() {
+ // todo: ska göra något också...
 }

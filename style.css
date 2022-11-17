@@ -3,6 +3,7 @@ body {
     background-color: #FFA7E0;
     font-family: 'Almendra', serif;
     width: 100%;
+
 }
 
 header {
@@ -20,12 +21,13 @@ main {
     background-color: #FFA7E0;
     display: flex;
     justify-content: center;
+    flex-direction: column;
 }
 
 
 img {
     margin-top: 1rem;
-    width: 55rem;
+    width: 50rem;
 }
 
 #playername {

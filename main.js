@@ -24,15 +24,16 @@ function getHTMLElements() {
 
 function startOfGame() {
     const startText = document.getElementById("starttextcontent");
-    startText.textContent = "Welcome to the game a Princess Adventure! I'm happy that you want to play and I hope you will like it. To begin enter your name and then press start."
-
-    const buttonToStart = document.getElementById("startbutton");
-    buttonToStart.textContent = "START";
-    buttonToStart.addEventListener('click', startFirstGameScene);
+    startText.textContent = "Välkommen till spelet en prinsessas äventyr. Här kommer du få följa en prinsessa på hennes äventyr under en dag. För att börja spelet, skriv in ditt namn och spara. Klicka sen på start."
 
     const buttonToSave = document.getElementById("savebutton");
-    buttonToSave.textContent = "Save";
+    buttonToSave.textContent = "Spara";
     buttonToSave.addEventListener('click', savePlayerName);
+
+    const buttonToStart = document.getElementById("startbutton");
+    buttonToStart.textContent = "STARTA";
+    buttonToStart.addEventListener('click', startFirstGameScene);
+
 
     const buttons = document.querySelector(".buttoncontent");
     buttons.style.display = "none";
@@ -54,45 +55,89 @@ function startFirstGameScene() {
     const buttons = document.querySelector(".buttoncontent");
     buttons.style.display = "block";
 
-    storyText.textContent = "Welcome princess today you will go on an adventure.";
-    storyText.textContent = "Welcome princess " + playerName + " today you will go on an adventure.";
+    storyText.textContent = "Den här morgonen vaknade prinsessan " + playerName + " och hon kände för att ge sig ut på ett äventyr. Hon är så trött på att hennes pappa kungen bara tvingar henne sitta inne i slottet varje dag. Medans hon fixade sig framför spegeln funderade hon på vart hon skulle gå på sitt äventyr, skulle hon gå till stranden eller in till staden. Vad tycker du?";
 
-    firstButton.textContent = "Go to the beach";
-    firstButton.addEventListener('click', startFirstBeachScene);
+    firstButton.textContent = "Gå till stranden";
+    firstButton.onclick = startFirstBeachScene;
 
-    secondButton.textContent = "Go to the town";
-    secondButton.addEventListener('click', startFirstTownScene);
+    secondButton.textContent = "Gå till staden";
+    secondButton.onclick = startFirstTownScene;
 
     const img = document.querySelector("img");
-    img.src = "./images/spegel.png";
+    img.src = "./images/mirror.png";
 
 }
 
 function startFirstBeachScene() {
-    storyText.textContent = "Prinsessan är på stranden";
+    storyText.textContent = "Påväg till stranden så såg hon två föremål i vägkanten, en hink och ett cyklop. Vilket föremål tycker du att hon ska ta upp? Ditt val kan påverka hur prinsessan " + playerName + "s dag blir.";
 
-    firstButton.textContent = "Välj spaden";
-    firstButton.addEventListener('click', putItemInBag);
+    firstButton.textContent = "Välj hinken";
+    firstButton.onclick = startOnTheBeachScene;
 
-    console.log(secondButton);
     secondButton.textContent = "Välj cyklopet";
-    secondButton.addEventListener('click', putItemInBag);
+    secondButton.onclick = startOnTheBeachScene;
 
     const img = document.querySelector("img");
-    img.src = "./images/stranden.png";
+    img.src = "./images/beachwalk.png";
 }
 
 function startFirstTownScene() {
-    storyText.textContent = "Prinsessan är påväg in till staden";
+    storyText.textContent = "Prinsessan är påväg in till staden, när hon går på vägen så ser hon något glimra till på marken. Hon böjer sig ner för att kolla vad det är. Det är ett guldmynt. Ska hon ta upp myntet eller ska hon låta det ligga kvar? Vad tycker du?";
 
     firstButton.textContent = "Ta upp myntet";
-    firstButton.addEventListener('click', startTownSceneCoin);
+    firstButton.onclick = startTownSceneCoin;
 
-    secondButton.textContent = "ta inte upp myntet";
-    secondButton.addEventListener('click', startTownSceneBoy);
+    secondButton.textContent = "Låt myntet ligga kvar";
+    secondButton.onclick = startTownSceneGuy;
+
+    const img = document.querySelector("img");
+    img.src = "./images/town.png";
 }
 
 
-function putItemInBag() {
- // todo: ska göra något också...
+function startOnTheBeachScene() {
+    storyText.textContent = "När prinssesan väl har kommit fram till stranden så kommer en liten pojke upp till henne. Han frågar 'Vad gör du här, helt själv på stranden prinsessan' " + playerName + "? Prinsessan svarar att hon rymt från slottet för att hon är så trött på sin pappa kungen och hon ville på ett äventyr."
+
+    firstButton.textContent = "Ta upp myntet";
+    firstButton.onclick = startTownSceneCoin;
+
+    secondButton.textContent = "Låt myntet ligga kvar";
+    secondButton.onclick = startTownSceneGuy;
+
+    const img = document.querySelector("img");
+    img.src = "./images/beach.png";
+}
+
+function startTownSceneCoin() {
+    storyText.textContent = "i stan se hon cafe"
+
+    firstButton.textContent = "kaka";
+    firstButton.onclick = startTownSceneCake;
+
+    secondButton.textContent = "muffins";
+    secondButton.onclick = startTownSceneMuffin;
+
+    const img = document.querySelector("img");
+    img.src = "./images/cafe.png";
+}
+
+function startTownSceneGuy() {
+    storyText.textContent = "En kille kommer upp"
+
+    firstButton.textContent = "Följ med honom";
+    firstButton.onclick = startTownSceneCoin;
+
+    secondButton.textContent = "Stanna kvar";
+    secondButton.onclick = startTownSceneGuy;
+
+    const img = document.querySelector("img");
+    img.src = "./images/townguy.png";
+}
+
+function startTownSceneMuffin() {
+    // bla
+}
+
+function startTownSceneCake() {
+
 }

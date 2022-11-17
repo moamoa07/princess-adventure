@@ -53,7 +53,6 @@ function startFirstGameScene() {
 
     const buttons = document.querySelector(".buttoncontent");
     buttons.style.display = "block";
-    buttons.style.justifycontent = "center";
 
     storyText.textContent = "Welcome princess today you will go on an adventure.";
     storyText.textContent = "Welcome princess " + playerName + " today you will go on an adventure.";

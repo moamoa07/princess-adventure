@@ -1,0 +1,72 @@
+body {
+    margin: 0;
+    background-color: #FFA7E0;
+    font-family: 'Almendra', serif;
+    width: 100%;
+}
+
+header {
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    color: #FF89D5;
+    text-align: center;
+}
+
+main {
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #FFA7E0;
+    display: flex;
+    justify-content: center;
+}
+
+
+img {
+    margin-top: 1rem;
+    width: 55rem;
+}
+
+#playername {
+    border: none;
+    border-radius: 3.125rem;
+    height: 2rem;
+    font-family: 'Almendra', serif;
+    font-size: 1rem;
+}
+
+#savebutton, #startbutton {
+    border: none;
+    border-radius: 3.125rem;
+    height: 2rem;
+    width: 4rem;
+    background-color: #FF89D5;
+    color: #fff;
+    font-family: 'Almendra', serif;
+    font-size: 1rem;
+}
+
+#startbutton {
+    margin-top: 2rem;
+    height: 4rem;
+    width: 8rem;
+    font-size: 2rem;
+}
+
+#firstoption, #secondoption {
+    border: none;
+    border-radius: 3.125rem;
+    height: 2rem;
+    width: 10rem;
+    background-color: #FF89D5;
+    color: #fff;
+    font-family: 'Almendra', serif;
+    font-size: 1rem;
+    margin-right: 1rem;
+}
+
+.buttoncontent {
+    display: flex;
+    justify-items: center;
+}

@@ -5,16 +5,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Almendra:ital,wght@0,400;1,700&display=swap" rel="stylesheet">
     <script src="main.js"></script>
     <title>Princess adventure</title>
 </head>
 <body>
+    <header>
+        <h1>A Princess Adventure</h1>
+    </header>
     <main>
         <div class="startscenecontent">
             <p id="starttextcontent"></p>
-            <label for="playername">What is your name?</label>
-            <input type="text" name="name" id="playername">
-            <button id="savebutton"></button>
+            <div class="inputfield">
+                <label for="playername">What is your name?</label>
+                <div>
+                    <input type="text" name="name" id="playername" placeholder="Enter name">
+                <button id="savebutton"></button>
+                </div>
+                
+            </div>
             <button id="startbutton"></button>
         </div>
         <div class="gamecontent">

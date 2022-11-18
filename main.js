@@ -199,8 +199,8 @@ function startUnderwaterScene() {
     const img = document.querySelector("img");
     img.src = "./images/underwater.png";
 
-    const buttons = document.querySelector(".buttoncontent");
-    buttons.style.display = "block";
+    const buttons = document.querySelector("secondoption");
+    buttons.style.display = null;
 
     firstButton.textContent = "Avsluta spelet";
     firstButton.onclick = startOfGame;
@@ -225,5 +225,5 @@ function startSandcastleScene() {
     secondButton.onclick = startFirstGameScene;
 
     const buttons = document.getElementById("secondoption");
-    buttons.style.display = "block";
+    buttons.style.display = null;
 }

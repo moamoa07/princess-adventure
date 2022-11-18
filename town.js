@@ -86,7 +86,7 @@ function startInsideCafeScene() {
     storyText.textContent = "Inne på cafeet funderar hon på vad hon ska köpa. En tårtbit eller en  muffins. Vad tycker du?"
 
     const buttons = document.getElementById("secondoption");
-    buttons.style.display = "block";
+    buttons.style.display = null;
 
     firstButton.textContent = "Ät tårtbiten";
     firstButton.onclick = startTownSceneCake;

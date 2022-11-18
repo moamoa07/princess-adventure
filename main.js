@@ -80,6 +80,9 @@ function startFirstGameScene() {
 }
 
 // strand scenerna
+/**
+ * Function that draws the first scene on the way to the beach, here you get a choice between to objects
+ */
 function startFirstBeachScene() {
     storyText.textContent = "Påväg till stranden så såg hon två föremål i vägkanten, en hink och ett cyklop. Vilket föremål tycker du att hon ska ta upp? Ditt val kan påverka hur prinsessan " + playerName + "s dag blir.";
 
@@ -100,6 +103,9 @@ function startFirstBeachScene() {
     img.src = "./images/beachwalk.png";
 }
 
+/**
+ * Function that draws the scene on the beach with the boy
+ */
 function startOnTheBeachScene() {
 
     storyText.textContent = "När prinssesan väl har kommit fram till stranden så kommer en liten pojke upp till henne. Han frågar 'Vad gör du här, helt själv på stranden prinsessan " + playerName + "?' Prinsessan svarar att hon rymt från slottet för att hon är så trött på sin pappa kungen och hon ville på ett äventyr.";
@@ -114,6 +120,9 @@ function startOnTheBeachScene() {
     img.src = "./images/beach.png";
 }
 
+/**
+ * Function that draws the scene where you start to play with the boy
+ */
 function startPlayWithBoyScene() {
     storyText.textContent = "Den lilla pojken säger att han inte har några leksaker. Då minns du att du ju har " + item + " i din väska, och berättar det för honom.";
     if (item === "en hink") {
@@ -147,6 +156,9 @@ function startPlayWithBoyScene() {
     }
 }
 
+/**
+ * Function that draws the scene with the angry king
+ */
 function startAngryKingBeachScene() {
     storyText.textContent = "Kungen kommer och skriker på dig och undrar hur du vågar gå emot honom. Han tar dig genast tillbaka till slottet."
 
@@ -160,6 +172,9 @@ function startAngryKingBeachScene() {
     secondButton.onclick = startFirstGameScene;
 }
 
+/**
+ * Function that draws the scene where the princess tells the boy she has a bucket
+ */
 function startOnTheBeachSceneSand() {
     storyText.textContent = "Prinsessan säger till den lilla pojken att hon hittade en hink påvägen hit och att de två kan bygga ett sandslott tillsammans.";
 
@@ -174,6 +189,9 @@ function startOnTheBeachSceneSand() {
         buttons.style.display = "none";
 }
 
+/**
+ * Function that draws the scene where the princess tells the boy she has a cyklop
+ */
 function startOnTheBeachSceneWater() {
     storyText.textContent = "Prinsessan säger till den lilla pojken att hon hittade ett cyklop påvägen hit och att de två kan bygga ett sandslott tillsammans.";
 
@@ -188,6 +206,9 @@ function startOnTheBeachSceneWater() {
         buttons.style.display = "none";
 }
 
+/**
+ * Function that draws the scene where they are snorkeling in the water
+ */
 function startUnderwaterScene() {
     storyText.textContent = "Du och pojken använder cyklopet och dyker ner i det varma blå vattnet och kollar på alla de fina fiskarna."
 
@@ -201,6 +222,9 @@ function startUnderwaterScene() {
     secondButton.onclick = startFirstGameScene;
 }
 
+/**
+ * Function that draws the scene where they made a sandcastle
+ */
 function startSandcastleScene() {
     storyText.textContent = "Du och pojken använder hinken för att bygga ett stort och ståtligt sandslott."
 

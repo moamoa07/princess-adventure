@@ -39,7 +39,7 @@ img {
     font-size: 1rem;
 }
 
-#savebutton, #startbutton {
+.startbuttons {
     border: none;
     border-radius: 3.125rem;
     height: 2rem;
@@ -48,6 +48,10 @@ img {
     color: #fff;
     font-family: 'Almendra', serif;
     font-size: 1rem;
+}
+
+.startbuttons:hover {
+    background-color: #f27dc9;
 }
 
 #startbutton {
@@ -74,6 +78,10 @@ img {
     font-family: 'Almendra', serif;
     font-size: 1rem;
     margin-right: 1rem;
+}
+
+.optionbuttons:hover {
+    background-color: #f27dc9;
 }
 
 .textcontent {

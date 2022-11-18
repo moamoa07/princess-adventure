@@ -122,6 +122,7 @@ function startPlayWithBoyScene() {
 
         const continueButton = document.createElement("button");
         continueButton.textContent = "Fortsätt";
+        continueButton.classList = "optionbuttons";
         continueButton.onclick = startOnTheBeachSceneSand;
 
         document.body.appendChild(continueButton);
@@ -136,6 +137,7 @@ function startPlayWithBoyScene() {
 
         const continueButton = document.createElement("button");
         continueButton.textContent = "Fortsätt";
+        continueButton.classList = "optionbuttons";
         continueButton.onclick = startOnTheBeachSceneWater;
 
         document.body.appendChild(continueButton);
@@ -163,6 +165,7 @@ function startOnTheBeachSceneSand() {
 
     const continueButton = document.createElement("button");
         continueButton.textContent = "Fortsätt";
+        continueButton.classList = "optionbuttons";
         continueButton.onclick = startUnderwaterScene;
 
         document.body.appendChild(continueButton);

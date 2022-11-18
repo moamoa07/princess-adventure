@@ -58,6 +58,7 @@ function startTownSceneCoin() {
 
     const continueButton = document.createElement("button");
     continueButton.textContent = "Fortsätt";
+    continueButton.classList = "optionbuttons"
     continueButton.onclick = startInsideCafeScene;
 
     document.body.appendChild(continueButton);

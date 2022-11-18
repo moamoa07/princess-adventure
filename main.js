@@ -7,21 +7,39 @@ let firstButton;
 /** @type {HTMLButtonElement} Option 2 in every scene */
 let secondButton;
 
+/** @type {HTMLParagraphElement} a p-tag that includes the name of the player */
 let playerName;
-let hasSnorkelBeenChoosen = false;
-let hasBucketBeenChoosen = false;
+/** @type {HTMLParagraphElement} a p-tag that includes the item that was picked up*/
+let item;
 
+/**
+ * Function that starts when the DOM is loaded
+ */
 function main() {
     startOfGame();
     getHTMLElements();
 }
 
+/**
+ * Function for getting all the elements from the HTML code
+ */
 function getHTMLElements() {
     storyText = document.getElementById("gametext");
     firstButton = document.getElementById("firstoption");
     secondButton = document.getElementById("secondoption");
 }
 
+/**
+ * Function that saves the input from the player
+ */
+function savePlayerName() {
+    let inputName = document.getElementById("playername").value;
+    playerName = inputName;
+}
+
+/**
+ * Function that draws the start page of the game, here you can input your name and click start
+ */
 function startOfGame() {
     const startText = document.getElementById("starttextcontent");
     startText.textContent = "Välkommen till spelet en prinsessas äventyr. Här kommer du få följa en prinsessa på hennes äventyr under en dag. För att börja spelet, skriv in ditt namn och spara. Klicka sen på start."
@@ -37,12 +55,6 @@ function startOfGame() {
     const buttons = document.querySelector(".buttoncontent");
     buttons.style.display = "none";
 }
-
-function savePlayerName() {
-    let inputName = document.getElementById("playername").value;
-    playerName = inputName;
-}
-
 
 /**
  * Function that draws the first scene of the game
@@ -72,30 +84,23 @@ function startFirstBeachScene() {
     storyText.textContent = "Påväg till stranden så såg hon två föremål i vägkanten, en hink och ett cyklop. Vilket föremål tycker du att hon ska ta upp? Ditt val kan påverka hur prinsessan " + playerName + "s dag blir.";
 
     firstButton.textContent = "Välj hinken";
-    firstButton.onclick = startOnTheBeachScene;
+    firstButton.onclick = function() {
+        item = "en hink";
+        startOnTheBeachScene();
+    }
 
     secondButton.textContent = "Välj cyklopet";
-    secondButton.onclick = startOnTheBeachScene;
+    secondButton.onclick = function() {
+        item = "ett cyklop";
+        startOnTheBeachScene();
+        
+    } 
 
     const img = document.querySelector("img");
     img.src = "./images/beachwalk.png";
 }
 
 function startOnTheBeachScene() {
-    if (firstButton.click) {
-        hasBucketBeenChoosen === true;
-        console.log("mango");
-
-        const img = document.querySelector("img");
-        img.src = "./images/beachbucket.png";
-    }
-    if (secondButton.click) {
-        hasSnorkelBeenChoosen === true;
-        console.log("banan");
-
-        const img = document.querySelector("img");
-        img.src = "./images/beachwater.png";
-    }
 
     storyText.textContent = "När prinssesan väl har kommit fram till stranden så kommer en liten pojke upp till henne. Han frågar 'Vad gör du här, helt själv på stranden prinsessan " + playerName + "?' Prinsessan svarar att hon rymt från slottet för att hon är så trött på sin pappa kungen och hon ville på ett äventyr.";
 
@@ -110,11 +115,34 @@ function startOnTheBeachScene() {
 }
 
 function startPlayWithBoyScene() {
-    storyText.textContent = "Den lilla pojken säger att han inte har några leksaker. Då minns du att du ju har FÖREMÅL i din väska, och berättar det för honom.";
-    // Beroende på vilket föremål hon tog upp ska den scenen som korrensponderar med föremålet spelas
+    storyText.textContent = "Den lilla pojken säger att han inte har några leksaker. Då minns du att du ju har " + item + " i din väska, och berättar det för honom.";
+    if (item === "en hink") {
+        const img = document.querySelector("img");
+        img.src = "./images/beachbucket.png";
 
-    const img = document.querySelector("img");
-    img.src = "./images/beach.png";
+        const continueButton = document.createElement("button");
+        continueButton.textContent = "Fortsätt";
+        continueButton.onclick = startOnTheBeachSceneSand;
+
+        document.body.appendChild(continueButton);
+
+        const buttons = document.querySelector(".buttoncontent");
+        buttons.style.display = "none";
+    } 
+
+    else {
+        const img = document.querySelector("img");
+        img.src = "./images/beachwater.png";
+
+        const continueButton = document.createElement("button");
+        continueButton.textContent = "Fortsätt";
+        continueButton.onclick = startOnTheBeachSceneWater;
+
+        document.body.appendChild(continueButton);
+
+        const buttons = document.querySelector(".buttoncontent");
+        buttons.style.display = "none";
+    }
 }
 
 function startAngryKingBeachScene() {
@@ -134,17 +162,51 @@ function startOnTheBeachSceneSand() {
     storyText.textContent = "Prinsessan säger till den lilla pojken att hon hittade en hink påvägen hit och att de två kan bygga ett sandslott tillsammans.";
 
     const continueButton = document.createElement("button");
-    continueButton.textContent = "Fortsätt";
-    continueButton.onclick = startUnderwaterScene;
+        continueButton.textContent = "Fortsätt";
+        continueButton.onclick = startUnderwaterScene;
+
+        document.body.appendChild(continueButton);
+
+        const buttons = document.querySelector(".buttoncontent");
+        buttons.style.display = "none";
 }
 
 function startOnTheBeachSceneWater() {
     storyText.textContent = "Prinsessan säger till den lilla pojken att hon hittade ett cyklop påvägen hit och att de två kan bygga ett sandslott tillsammans.";
 
     const continueButton = document.createElement("button");
-    continueButton.textContent = "Fortsätt";
-    continueButton.onclick = startSandcastleScene;
+        continueButton.textContent = "Fortsätt";
+        continueButton.classList = "optionbuttons"
+        continueButton.onclick = startSandcastleScene;
+
+        document.body.appendChild(continueButton);
+
+        const buttons = document.querySelector(".buttoncontent");
+        buttons.style.display = "none";
 }
 
+function startUnderwaterScene() {
+    storyText.textContent = "Du och pojken använder cyklopet och dyker ner i det varma blå vattnet och kollar på alla de fina fiskarna."
 
+    const img = document.querySelector("img");
+    img.src = "./images/underwater.png";
 
+    firstButton.textContent = "Avsluta spelet";
+    firstButton.onclick = startOfGame;
+
+    secondButton.textContent = "Spela igen";
+    secondButton.onclick = startFirstGameScene;
+}
+
+function startSandcastleScene() {
+    storyText.textContent = "Du och pojken använder hinken för att bygga ett stort och ståtligt sandslott."
+
+    const img = document.querySelector("img");
+    img.src = "./images/sandcastle.png";
+
+    firstButton.textContent = "Avsluta spelet";
+    firstButton.onclick = startOfGame;
+
+    secondButton.textContent = "Spela igen";
+    secondButton.onclick = startFirstGameScene;
+}

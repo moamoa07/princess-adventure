@@ -60,6 +60,8 @@ function startTownSceneCoin() {
     continueButton.textContent = "Fortsätt";
     continueButton.onclick = startInsideCafeScene;
 
+    document.body.appendChild(continueButton);
+
     const buttons = document.querySelector(".buttoncontent");
     buttons.style.display = "none";
 

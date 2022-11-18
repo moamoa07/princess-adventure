@@ -69,14 +69,10 @@ function startAngryKingTownScene() {
 function startTownSceneCoin() {
     storyText.textContent = "Väl inne i stan ser prinsessan " + playerName + " ett cafe som hon väljer att gå in på"
 
-    const continueButton = document.createElement("button");
-    continueButton.textContent = "Fortsätt";
-    continueButton.classList = "optionbuttons"
-    continueButton.onclick = startInsideCafeScene;
-
-    document.body.appendChild(continueButton);
-
-    const buttons = document.querySelector(".buttoncontent");
+    firstButton.textContent = "Forsätt";
+    firstButton.onclick = startInsideCafeScene;
+    
+    const buttons = document.getElementById("secondoption");
     buttons.style.display = "none";
 
     const img = document.querySelector("img");
@@ -89,11 +85,14 @@ function startTownSceneCoin() {
 function startInsideCafeScene() {
     storyText.textContent = "Inne på cafeet funderar hon på vad hon ska köpa. En tårtbit eller en  muffins. Vad tycker du?"
 
+    const buttons = document.getElementById("secondoption");
+    buttons.style.display = "block";
+
     firstButton.textContent = "Ät tårtbiten";
-    firstButton.onclick = startTownSceneMuffin;
+    firstButton.onclick = startTownSceneCake;
 
     secondButton.textContent = "Ät muffinsen";
-    secondButton.onclick = startTownSceneCake;
+    secondButton.onclick = startTownSceneMuffin;
 
     const img = document.querySelector("img");
     img.src = "./images/insidecafe.png";
@@ -122,7 +121,7 @@ function startTownSceneCake() {
     storyText.textContent = "Prinsessan väljer att äta en tårtbit, hon njuter av denna delikatess och känner sig sedan nöjd med sitt äventyr och går tillbaka till slottet."
 
     const img = document.querySelector("img");
-    img.src = "./images/cake.png";
+    img.src = "./images/cakeslice.png";
 
     firstButton.textContent = "Avsluta spelet";
     firstButton.onclick = startOfGame;

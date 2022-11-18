@@ -3,7 +3,6 @@ body {
     background-color: #FFA7E0;
     font-family: 'Almendra', serif;
     width: 100%;
-
 }
 
 header {
@@ -37,6 +36,7 @@ img {
     height: 2rem;
     font-family: 'Almendra', serif;
     font-size: 1rem;
+    margin-right: 0.5rem;
 }
 
 .startbuttons {
@@ -89,4 +89,9 @@ img {
     justify-items: center;
     align-items: center;
     flex-direction: column;
+}
+
+.buttoncontent {
+    display: flex;
+    flex-direction: row;
 }

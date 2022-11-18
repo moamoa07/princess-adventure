@@ -129,14 +129,10 @@ function startPlayWithBoyScene() {
         const img = document.querySelector("img");
         img.src = "./images/beachbucket.png";
 
-        const continueButton = document.createElement("button");
-        continueButton.textContent = "Fortsätt";
-        continueButton.classList = "optionbuttons";
-        continueButton.onclick = startOnTheBeachSceneSand;
-
-        document.body.appendChild(continueButton);
-
-        const buttons = document.querySelector(".buttoncontent");
+        firstButton.textContent = "Forsätt";
+        firstButton.onclick = startOnTheBeachSceneSand;
+       
+        const buttons = document.getElementById("secondoption");
         buttons.style.display = "none";
     } 
 
@@ -144,14 +140,10 @@ function startPlayWithBoyScene() {
         const img = document.querySelector("img");
         img.src = "./images/beachwater.png";
 
-        const continueButton = document.createElement("button");
-        continueButton.textContent = "Fortsätt";
-        continueButton.classList = "optionbuttons";
-        continueButton.onclick = startOnTheBeachSceneWater;
-
-        document.body.appendChild(continueButton);
-
-        const buttons = document.querySelector(".buttoncontent");
+        firstButton.textContent = "Forsätt";
+        firstButton.onclick = startOnTheBeachSceneWater;
+       
+        const buttons = document.getElementById("secondoption");
         buttons.style.display = "none";
     }
 }
@@ -178,15 +170,11 @@ function startAngryKingBeachScene() {
 function startOnTheBeachSceneSand() {
     storyText.textContent = "Prinsessan säger till den lilla pojken att hon hittade en hink påvägen hit och att de två kan bygga ett sandslott tillsammans.";
 
-    const continueButton = document.createElement("button");
-        continueButton.textContent = "Fortsätt";
-        continueButton.classList = "optionbuttons";
-        continueButton.onclick = startUnderwaterScene;
-
-        document.body.appendChild(continueButton);
-
-        const buttons = document.querySelector(".buttoncontent");
-        buttons.style.display = "none";
+    firstButton.textContent = "Forsätt";
+    firstButton.onclick = startSandcastleScene;
+    
+    const buttons = document.getElementById("secondoption");
+    buttons.style.display = "none";
 }
 
 /**
@@ -195,15 +183,11 @@ function startOnTheBeachSceneSand() {
 function startOnTheBeachSceneWater() {
     storyText.textContent = "Prinsessan säger till den lilla pojken att hon hittade ett cyklop påvägen hit och att de två kan bygga ett sandslott tillsammans.";
 
-    const continueButton = document.createElement("button");
-        continueButton.textContent = "Fortsätt";
-        continueButton.classList = "optionbuttons"
-        continueButton.onclick = startSandcastleScene;
-
-        document.body.appendChild(continueButton);
-
-        const buttons = document.querySelector(".buttoncontent");
-        buttons.style.display = "none";
+    firstButton.textContent = "Forsätt";
+    firstButton.onclick = startUnderwaterScene;
+    
+    const buttons = document.getElementById("secondoption");
+    buttons.style.display = "none";
 }
 
 /**
@@ -214,6 +198,9 @@ function startUnderwaterScene() {
 
     const img = document.querySelector("img");
     img.src = "./images/underwater.png";
+
+    const buttons = document.querySelector(".buttoncontent");
+    buttons.style.display = "block";
 
     firstButton.textContent = "Avsluta spelet";
     firstButton.onclick = startOfGame;
@@ -236,4 +223,7 @@ function startSandcastleScene() {
 
     secondButton.textContent = "Spela igen";
     secondButton.onclick = startFirstGameScene;
+
+    const buttons = document.getElementById("secondoption");
+    buttons.style.display = "block";
 }

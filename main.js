@@ -108,7 +108,7 @@ function startFirstBeachScene() {
  */
 function startOnTheBeachScene() {
 
-    storyText.textContent = "När prinssesan väl har kommit fram till stranden så kommer en liten pojke upp till henne. Han frågar 'Vad gör du här, helt själv på stranden prinsessan " + playerName + "?' Prinsessan svarar att hon rymt från slottet för att hon är så trött på sin pappa kungen och hon ville på ett äventyr.";
+    storyText.textContent = "När prinssesan väl har kommit fram till stranden så kommer en liten pojke upp till henne. Han frågar \"Vad gör du här, helt själv på stranden prinsessan " + playerName + "?\" Prinsessan svarar att hon rymt från slottet för att hon är så trött på sin pappa kungen och att hon ville på ett äventyr. Då frågar den lilla pojken om prinsessan vill stanna och leka med honom.";
 
     firstButton.textContent = "Lek med pojken";
     firstButton.onclick = startPlayWithBoyScene;
@@ -124,7 +124,7 @@ function startOnTheBeachScene() {
  * Function that draws the scene where you start to play with the boy
  */
 function startPlayWithBoyScene() {
-    storyText.textContent = "Den lilla pojken säger att han inte har några leksaker. Då minns du att du ju har " + item + " i din väska, och berättar det för honom.";
+    storyText.textContent = "Den lilla pojken säger att han inte har några leksaker. Då minns du att du ju har " + item + " i din väska.";
     if (item === "en hink") {
         const img = document.querySelector("img");
         img.src = "./images/beachbucket.png";
@@ -152,13 +152,16 @@ function startPlayWithBoyScene() {
  * Function that draws the scene with the angry king
  */
 function startAngryKingBeachScene() {
-    storyText.textContent = "Kungen kommer och skriker på dig och undrar hur du vågar gå emot honom. Han tar dig genast tillbaka till slottet."
+    storyText.textContent = "Kungen kommer och skriker på prinsessan och undrar hur hon vågar gå emot honom. Han tar genast med henne tillbaka till slottet."
 
     const img = document.querySelector("img");
     img.src = "./images/angrykingbeach.png";
 
     firstButton.textContent = "Avsluta spelet";
-    firstButton.onclick = startOfGame;
+    firstButton.onclick = function(){
+        window.location.reload();
+        return false;
+    }
 
     secondButton.textContent = "Spela igen";
     secondButton.onclick = startFirstGameScene;
@@ -168,7 +171,7 @@ function startAngryKingBeachScene() {
  * Function that draws the scene where the princess tells the boy she has a bucket
  */
 function startOnTheBeachSceneSand() {
-    storyText.textContent = "Prinsessan säger till den lilla pojken att hon hittade en hink påvägen hit och att de två kan bygga ett sandslott tillsammans.";
+    storyText.textContent = "Prinsessan säger till den lilla pojken att hon hittade en hink påvägen hit som hon har i sin väska och att de två kan bygga ett sandslott tillsammans.";
 
     firstButton.textContent = "Forsätt";
     firstButton.onclick = startSandcastleScene;
@@ -181,7 +184,7 @@ function startOnTheBeachSceneSand() {
  * Function that draws the scene where the princess tells the boy she has a cyklop
  */
 function startOnTheBeachSceneWater() {
-    storyText.textContent = "Prinsessan säger till den lilla pojken att hon hittade ett cyklop påvägen hit och att de kan snorkla i det fina vattnet tillsammans.";
+    storyText.textContent = "Prinsessan säger till den lilla pojken att hon hittade ett cyklop påvägen hit som hon har i sin väska och att de kan snorkla i det fina vattnet tillsammans.";
 
     firstButton.textContent = "Forsätt";
     firstButton.onclick = startUnderwaterScene;
@@ -201,7 +204,10 @@ function startUnderwaterScene() {
 
     
     firstButton.textContent = "Avsluta spelet";
-    firstButton.onclick = startOfGame;
+    firstButton.onclick = function(){
+        window.location.reload();
+        return false;
+    }
     
     secondButton.textContent = "Spela igen";
     secondButton.onclick = startFirstGameScene;
@@ -220,7 +226,10 @@ function startSandcastleScene() {
     img.src = "./images/sandcastle.png";
 
     firstButton.textContent = "Avsluta spelet";
-    firstButton.onclick = startOfGame;
+    firstButton.onclick = function(){
+        window.location.reload();
+        return false;
+    }
 
     secondButton.textContent = "Spela igen";
     secondButton.onclick = startFirstGameScene;

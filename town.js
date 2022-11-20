@@ -19,7 +19,7 @@ function startFirstTownScene() {
  * Function that draws the town scene with the guy from the stable
  */
 function startTownSceneGuy() {
-    storyText.textContent = "Killen som jobbar i stallet vid slottet har varit inne i staden för att köpa morötter till hästarna. Han frågar henne om hon vill rymma från slottet och kungen med honom. Vad tycker du att hon ska göra?"
+    storyText.textContent = "När prinsessan " + playerName + " ställer sig upp efter att ha kollat på myntet så ser hon att killen som jobbar i stallet vid slottet, som hon spenderar så mycket tid som möjligt med, har varit inne i staden för att köpa morötter till hästarna. Han frågar henne om hon vill rymma från slottet och kungen med honom. Vad tycker du att hon ska göra?"
 
     firstButton.textContent = "Följ med honom";
     firstButton.onclick = startSunsetScene;
@@ -41,7 +41,10 @@ function startSunsetScene() {
     img.src = "./images/guysunset.png";
 
     firstButton.textContent = "Avsluta spelet";
-    firstButton.onclick = startOfGame;
+    firstButton.onclick = function(){
+        window.location.reload();
+        return false;
+    }
 
     secondButton.textContent = "Spela igen";
     secondButton.onclick = startFirstGameScene;
@@ -51,13 +54,16 @@ function startSunsetScene() {
  * Function that draws the scene where the angry king is
  */
 function startAngryKingTownScene() {
-    storyText.textContent = "Kungen kommer och skriker på dig och undrar hur du vågar gå emot honom. Han tar dig genast tillbaka till slottet."
+    storyText.textContent = "Kungen kommer och skriker på prinsessan och undrar hur hon vågar gå emot honom. Han tar genast med sig henne tillbaka till slottet."
 
     const img = document.querySelector("img");
     img.src = "./images/angrykingtown.png";
 
     firstButton.textContent = "Avsluta spelet";
-    firstButton.onclick = startOfGame;
+    firstButton.onclick = function(){
+        window.location.reload();
+        return false;
+    }
 
     secondButton.textContent = "Spela igen";
     secondButton.onclick = startFirstGameScene;
@@ -67,7 +73,7 @@ function startAngryKingTownScene() {
  * Function that draws the scene in the town
  */
 function startTownSceneCoin() {
-    storyText.textContent = "Väl inne i stan ser prinsessan " + playerName + " ett cafe som hon väljer att gå in på"
+    storyText.textContent = "Väl inne i stan ser prinsessan " + playerName + " ett cafe som ser ut att ha en massa goda tårtor och bakelser. Hon kan inte hålla sig från att gå in, så det gör hon."
 
     firstButton.textContent = "Forsätt";
     firstButton.onclick = startInsideCafeScene;
@@ -83,7 +89,7 @@ function startTownSceneCoin() {
  * Function that draws the scene inside the cafe
  */
 function startInsideCafeScene() {
-    storyText.textContent = "Inne på cafeet funderar hon på vad hon ska köpa. En tårtbit eller en  muffins. Vad tycker du?"
+    storyText.textContent = "Inne på cafeet funderar hon på vad hon ska köpa. En tårtbit eller en muffins. Vad tycker du?"
 
     const buttons = document.getElementById("secondoption");
     buttons.style.display = null;
@@ -102,13 +108,16 @@ function startInsideCafeScene() {
  * Function that draws the scene after she ate the muffin
  */
 function startTownSceneMuffin() {
-    storyText.textContent = "Du väljer att äta en muffins men efter ditt första bett faller du till marken och slutar andas. Någon har förgiftat dig. Du dog."
+    storyText.textContent = "Prinsessan " + playerName + " väljer att äta en muffins men efter hennes första bett faller hon till marken och slutar andas. Någon har förgiftat henne. Hon dog."
 
     const img = document.querySelector("img");
     img.src = "./images/cupcake.png";
 
     firstButton.textContent = "Avsluta spelet";
-    firstButton.onclick = startOfGame;
+    firstButton.onclick = function(){
+        window.location.reload();
+        return false;
+    }
 
     secondButton.textContent = "Spela igen";
     secondButton.onclick = startFirstGameScene;
@@ -124,7 +133,10 @@ function startTownSceneCake() {
     img.src = "./images/cakeslice.png";
 
     firstButton.textContent = "Avsluta spelet";
-    firstButton.onclick = startOfGame;
+    firstButton.onclick = function(){
+        window.location.reload();
+        return false;
+    }
 
     secondButton.textContent = "Spela igen";
     secondButton.onclick = startFirstGameScene;

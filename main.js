@@ -181,7 +181,7 @@ function startOnTheBeachSceneSand() {
  * Function that draws the scene where the princess tells the boy she has a cyklop
  */
 function startOnTheBeachSceneWater() {
-    storyText.textContent = "Prinsessan säger till den lilla pojken att hon hittade ett cyklop påvägen hit och att de två kan bygga ett sandslott tillsammans.";
+    storyText.textContent = "Prinsessan säger till den lilla pojken att hon hittade ett cyklop påvägen hit och att de kan snorkla i det fina vattnet tillsammans.";
 
     firstButton.textContent = "Forsätt";
     firstButton.onclick = startUnderwaterScene;

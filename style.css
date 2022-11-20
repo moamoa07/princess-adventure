@@ -14,7 +14,7 @@ header {
 }
 
 main {
-    width: 50rem;
+    width: 50%;
     margin-left: auto;
     margin-right: auto;
     background-color: #FFA7E0;
@@ -27,7 +27,7 @@ main {
 
 img {
     margin-top: 1rem;
-    width: 50rem;
+    width: 100%;
 }
 
 #playername {
@@ -94,4 +94,48 @@ img {
 .buttoncontent {
     display: flex;
     flex-direction: row;
+}
+
+/* media queries */
+@media (min-width: 48em) and (max-width: 63em) {
+    h1 {
+        font-size: 3rem;
+    }
+    main {
+        width: 80%;
+        font-size: 1.5rem;
+    }
+
+    .optionbuttons {
+        font-size: 1.5rem;
+        width: 18rem;
+        height: 3rem;
+    }
+    .optionbuttons:hover {
+        background-color: #f27dc9;
+    }
+}
+
+@media (max-width: 48em) {
+    h1 {
+        font-size: 2rem;
+    }
+    main {
+        width: 90%;
+        font-size: 1rem;
+    }
+
+    .optionbuttons {
+        font-size: 0.9rem;
+        width: 8rem;
+        height: 3rem;
+    }
+    .buttoncontent {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .optionbuttons:hover {
+        background-color: #f27dc9;
+    }
 }

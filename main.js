@@ -199,14 +199,15 @@ function startUnderwaterScene() {
     const img = document.querySelector("img");
     img.src = "./images/underwater.png";
 
-    const buttons = document.querySelector("secondoption");
-    buttons.style.display = null;
-
+    
     firstButton.textContent = "Avsluta spelet";
     firstButton.onclick = startOfGame;
-
+    
     secondButton.textContent = "Spela igen";
     secondButton.onclick = startFirstGameScene;
+
+    const buttons = document.getElementById("secondoption");
+    buttons.style.display = null;
 }
 
 /**

@@ -113,7 +113,7 @@ img {
         height: 3rem;
     }
     .optionbuttons:hover {
-        background-color: #f27dc9;
+        background-color: #FF89D5;
     }
 }
 
@@ -137,6 +137,6 @@ img {
         align-items: center;
     }
     .optionbuttons:hover {
-        background-color: #f27dc9;
+        background-color: #FF89D5;
     }
 }

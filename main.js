@@ -38,7 +38,7 @@ function savePlayerName() {
 }
 
 /**
- * Function that draws the start page of the game, here you can input your name and click start
+ * Function that draws the start page of the game, here you can input your name, save and click start
  */
 function startOfGame() {
     const startText = document.getElementById("starttextcontent");
@@ -81,7 +81,7 @@ function startFirstGameScene() {
 
 // strand scenerna
 /**
- * Function that draws the first scene on the way to the beach, here you get a choice between to objects
+ * Function that draws the first scene on the way to the beach, here you get a choice between to objects that save your choice in a variable
  */
 function startFirstBeachScene() {
     storyText.textContent = "Påväg till stranden så såg hon två föremål i vägkanten, en hink och ett cyklop. Vilket föremål tycker du att hon ska ta upp? Ditt val kan påverka hur prinsessan " + playerName + "s dag blir.";
